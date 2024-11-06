@@ -3,16 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameInfo Page</title>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const lang = urlParams.get('lang');
+		const platform = urlParams.get('platform');
+        const baseURL = 'https://dev.apex-win.com/Webview/WTF002';
+        
+        window.onload = function() 
+		{
+			
+            let suffix = '';
+			
+			if(platform)
+			{
+				suffix += '/platform_' + platform ;
+			}
+			else
+			{
+				console.error("不知道這是哪個站台");
+				return;
+			}
+			
+            if (lang) 
+			{
+                suffix += '/index_' + lang;
+            } 
+			else 
+			{
+                console.error("沒有抓到lang");
+				return;
+            }
+			
+			const currentURL = baseURL + suffix + '.html';
+			window.parent.postMessage({ type: "infourl", url: currentURL }, "*");
+            window.location.href = currentURL;
+        };
+    </script>
+</head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centered Rotating Image</title>
     <style>
         /* 設定旋轉動畫 */
-        @keyframes spin {
+        @keyframes spin 
+		{
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
 
         /* 全局樣式：隱藏滾動條 */
-        html, body {
+        html, body 
+		{
             margin: 0;
             padding: 0;
             overflow: hidden; /* 隱藏滾動條 */
@@ -20,7 +63,8 @@
         }
 
         /* 設定容器樣式，使圖片置中 */
-        .center-container {
+        .center-container 
+		{
             display: flex;
             justify-content: center;
             align-items: center;
@@ -28,7 +72,8 @@
         }
 
         /* 圖片樣式 */
-        .rotating-image {
+        .rotating-image 
+		{
             width: 150px; /* 可調整圖片大小 */
             animation: spin 2s linear infinite; /* 2秒一圈，無限循環 */
         }
