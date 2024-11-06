@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>置中旋轉圖片</title>
+    <style>
+        /* 設定旋轉動畫 */
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* 設定容器樣式，使圖片置中 */
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* 讓容器高度佔滿整個視窗 */
+        }
+
+        /* 圖片樣式 */
+        .rotating-image {
+            width: 200px; /* 可調整圖片大小 */
+            animation: spin 2s linear infinite; /* 2秒一圈，無限循環 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 置中容器 -->
+    <div class="center-container">
+        <!-- 插入圖片，並應用旋轉效果 -->
+        <img src="icon_loading.png" alt="旋轉圖片" class="rotating-image">
+    </div>
+</body>
+</html>
