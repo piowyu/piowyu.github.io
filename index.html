@@ -11,27 +11,34 @@
             to { transform: rotate(360deg); }
         }
 
-        /* 容器樣式：使圖片置中 */
+        /* 全局樣式：隱藏滾動條 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* 隱藏滾動條 */
+            height: 100%; /* 設定高度為100%以防止滾動 */
+        }
+
+        /* 設定容器樣式，使圖片置中 */
         .center-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* 高度佔滿視窗 */
-            margin: 0;
+            height: 100vh; /* 讓容器高度佔滿整個視窗 */
         }
 
-        /* 圖片樣式：旋轉效果 */
+        /* 圖片樣式 */
         .rotating-image {
-            width: 150px; /* 圖片大小 */
-            animation: spin 2s linear infinite; /* 2秒旋轉一圈 */
+            width: 150px; /* 可調整圖片大小 */
+            animation: spin 2s linear infinite; /* 2秒一圈，無限循環 */
         }
     </style>
 </head>
 <body>
-    <!-- 中央置中容器 -->
+    <!-- 置中容器 -->
     <div class="center-container">
-        <!-- 插入旋轉圖片 -->
-        <img src="icon_loading.png" alt="Rotating Image" class="rotating-image">
+        <!-- 插入圖片，並應用旋轉效果 -->
+        <img src="icon_loading.png" alt="旋轉圖片" class="rotating-image">
     </div>
 </body>
 </html>
