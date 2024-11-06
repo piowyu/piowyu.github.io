@@ -41,13 +41,15 @@
     </script>
     <style>
         /* 設定旋轉動畫 */
-        @keyframes spin {
+        @keyframes spin 
+		{
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
 
         /* 全局樣式：隱藏滾動條 */
-        html, body {
+        html, body 
+		{
             margin: 0;
             padding: 0;
             overflow: hidden; /* 隱藏滾動條 */
@@ -55,7 +57,8 @@
         }
 
         /* 設定容器樣式，使圖片置中 */
-        .center-container {
+        .center-container 
+		{
             display: flex;
             justify-content: center;
             align-items: center;
@@ -63,7 +66,8 @@
         }
 
         /* 圖片樣式 */
-        .rotating-image {
+        .rotating-image 
+		{
             width: 150px; /* 可調整圖片大小 */
             animation: spin 2s linear infinite; /* 2秒一圈，無限循環 */
         }
