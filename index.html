@@ -10,26 +10,19 @@
         const platform = urlParams.get('platform');
         const baseURL = 'https://dev.apex-win.com/Webview/WTF002';
         
-        window.onload = function() 
-		{
+        window.onload = function() {
             let suffix = '';
             
-            if (platform) 
-			{
+            if (platform) {
                 suffix += '/platform_' + platform;
-            } 
-			else 
-			{
+            } else {
                 console.error("不知道這是哪個站台");
                 return;
             }
             
-            if (lang) 
-			{
+            if (lang) {
                 suffix += '/index_' + lang;
-            } 
-			else 
-			{
+            } else {
                 console.error("沒有抓到lang");
                 return;
             }
@@ -41,33 +34,28 @@
     </script>
     <style>
         /* 設定旋轉動畫 */
-        @keyframes spin 
-		{
+        @keyframes spin {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
 
         /* 全局樣式：隱藏滾動條 */
-        html, body 
-		{
+        html, body {
             margin: 0;
             padding: 0;
             overflow: hidden; /* 隱藏滾動條 */
             height: 100%; /* 設定高度為100%以防止滾動 */
         }
 
-        /* 設定容器樣式，使圖片置中 */
-        .center-container 
-		{
+        /* 設定容器樣式，使圖片左右置中 */
+        .center-container {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; /* 讓容器高度佔滿整個視窗 */
+            justify-content: center; /* 左右置中 */
+            height: 10vh; /* 讓容器高度佔滿整個視窗 */
         }
 
         /* 圖片樣式 */
-        .rotating-image 
-		{
+        .rotating-image {
             width: 100px; /* 可調整圖片大小 */
             animation: spin 2s linear infinite; /* 2秒一圈，無限循環 */
         }
@@ -75,8 +63,6 @@
 </head>
 <body>
     <div class="center-container">
-        <!-- 加入一個透明的 div 作為上邊距 -->
-        <div style="height: 50vh;"></div>
         <!-- 插入圖片，並應用旋轉效果 -->
         <img src="icon_loading.png" alt="旋轉圖片" class="rotating-image">
     </div>
