@@ -47,22 +47,23 @@
             height: 100%; /* 設定高度為100%以防止滾動 */
         }
 
-        /* 設定容器樣式，使圖片左右置中 */
+        /* 設定容器樣式，使圖片置中 */
         .center-container {
             display: flex;
-            justify-content: center; /* 左右置中 */
+            justify-content: center;
+            align-items: center;
             height: 100vh; /* 讓容器高度佔滿整個視窗 */
         }
 
         /* 圖片樣式 */
         .rotating-image {
-            width: 100px; /* 可調整圖片大小 */
+            width: 150px; /* 可調整圖片大小 */
             animation: spin 2s linear infinite; /* 2秒一圈，無限循環 */
-            margin-top: 20vh; /* 調整此值以改變圖片的垂直位置 */
         }
     </style>
 </head>
 <body>
+    <!-- 置中容器 -->
     <div class="center-container">
         <!-- 插入圖片，並應用旋轉效果 -->
         <img src="icon_loading.png" alt="旋轉圖片" class="rotating-image">
